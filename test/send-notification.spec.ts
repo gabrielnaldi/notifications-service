@@ -1,25 +1,25 @@
-import { Notification } from 'src/application/entities/notification';
 import { Content } from '../src/application/entities/content';
 import { SendNotification } from '../src/application/use-cases/send-notification';
-
-const notifications: Notification[] = [];
-
-const notificationRepository = {
-    async create(notification: Notification) {
-        notifications.push(notification);
-    },
-};
+import { InMemoryNotificationsRepository } from './repositories/in-memory-notifications-repository';
 
 describe('Send notification', () => {
     it('should be able to send notification', async () => {
-        const sendNotification = new SendNotification(notificationRepository);
+        const inMemoryNotificationsRepository =
+            new InMemoryNotificationsRepository();
 
-        await sendNotification.execute({
+        const sendNotification = new SendNotification(
+            inMemoryNotificationsRepository,
+        );
+
+        const { notification } = await sendNotification.execute({
             category: 'social',
             content: new Content('you received a new notification'),
             recipientId: '1234-5678',
         });
 
-        expect(notifications).toHaveLength(1);
+        expect(inMemoryNotificationsRepository.notifications).toHaveLength(1);
+        expect(inMemoryNotificationsRepository.notifications[0]).toEqual(
+            notification,
+        );
     });
 });
