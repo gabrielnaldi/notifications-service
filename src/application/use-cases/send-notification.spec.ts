@@ -1,25 +1,18 @@
-import { Notification } from '../entities/notification';
-import { NotificationRepository } from '../repositories/notification-repository';
+import { InMemoryNotificationRepository } from '../../../test/repositories/in-memory-notification-repository';
 import { SendNotification } from './send-notification';
-
-const notifications: Notification[] = [];
-
-const notificationRepository: NotificationRepository = {
-  async create(notification) {
-    notifications.push(notification);
-  },
-};
 
 describe('SendNotification', () => {
   it('should be able to send notification', async () => {
+    const notificationRepository = new InMemoryNotificationRepository();
     const sendNotification = new SendNotification(notificationRepository);
 
-    await sendNotification.execute({
+    const { notification } = await sendNotification.execute({
       recipientId: 'recipient-id-test',
       content: 'Send notification content',
       category: 'social',
     });
 
-    expect(notifications).toHaveLength(1);
+    expect(notificationRepository.notifications).toHaveLength(1);
+    expect(notificationRepository.notifications[0]).toEqual(notification);
   });
 });
