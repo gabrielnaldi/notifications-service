@@ -16,7 +16,7 @@ export class CancelNotification {
       notificationId,
     );
 
-    if (!notification) new NotificationNotFound();
+    if (!notification) throw new NotificationNotFound();
 
     notification.cancel();
 
