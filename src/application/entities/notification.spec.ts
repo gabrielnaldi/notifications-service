@@ -1,13 +1,10 @@
 import { randomUUID } from 'crypto';
-import { Notification } from './notification';
-import { NotificationContent } from './notification-content';
+import { makeNotification } from '@test/factories/notification-factory';
 
 describe('Notification', () => {
   it('should create notification', () => {
-    const notification = new Notification({
+    const notification = makeNotification({
       recipientId: randomUUID(),
-      category: 'avisos',
-      content: new NotificationContent('teste de conteudo'),
     });
 
     expect(notification).toBeTruthy();
