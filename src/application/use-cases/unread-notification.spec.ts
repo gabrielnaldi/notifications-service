@@ -15,4 +15,15 @@ describe('Unread notification', () => {
 
     expect(notificationRepository.notifications[0].readAt).toBeNull();
   });
+
+  it('should not be able to unread a non existing notification', async () => {
+    const notificationRepository = new InMemoryNotificationRepository();
+    const unreadNotification = new UnreadNotification(notificationRepository);
+
+    expect(() => {
+      return unreadNotification.execute({
+        notificationId: 'fake-notification-id',
+      });
+    }).rejects.toThrow();
+  });
 });
