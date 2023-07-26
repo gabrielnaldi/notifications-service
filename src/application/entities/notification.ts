@@ -67,6 +67,10 @@ export class Notification {
     this._props.readAt = new Date();
   }
 
+  public unread() {
+    this._props.readAt = null;
+  }
+
   public cancel() {
     this._props.canceledAt = new Date();
   }
