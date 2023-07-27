@@ -39,7 +39,7 @@ export class NotificationsController {
       recipientId,
     });
 
-    return notifications.map(NotificationViewModule.toHttp);
+    return { notifications: notifications.map(NotificationViewModule.toHttp) };
   }
 
   @Patch(':id/read')
