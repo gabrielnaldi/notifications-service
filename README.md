@@ -6,9 +6,20 @@
 
 <img src="./public/banner.jpg"  alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> This project was made to perform as an independent subsystem for others modules and it can be used to send notifications bounded to a recipient.
 
-### Functionalities
+<br>
+
+## 🌟 Tecnologies
+* NestJS
+* Typescript
+* Jest
+* Prisma ORM
+
+
+<br>
+
+## 🎯 Functionalities
 
 The project is considered complete. Here is a list of functionalities that it can perform:
 
@@ -19,46 +30,82 @@ The project is considered complete. Here is a list of functionalities that it ca
 - List Notifications by Recipient
 - Count Notifications by Recipient
 
+<br>
+
 ## 💻 Requisites
 
 Before start using the project, make sure you completed the following requisites:
 
-* You have `<Node / Npm / Nest>`
+* You have `<Node / Npm or Yarn / Nest (configured)>`
 * You have `<Linux / Mac>`
-* You read `<guia / link / documentação_relacionada_ao_projeto>`.
+* You read <a href="#installation">Installation guide</a>.
 
-## 🚀 Installing <nome_do_projeto>
+<br>
 
-To install <nome_do_projeto>, follow these steps:
+## 🚀 <span id="installation">Installation</span>
 
-Linux e macOS:
-```
-<comando_de_instalação>
-```
+To install the notifications service, follow these steps:
 
-## ☕ Running <nome_do_projeto>
-
-Para usar <nome_do_projeto>, siga estas etapas:
+* Open your terminal
+* Navigate to the location where you cloned the project.
+* Inside the folder, install all dependencies by running the code
 
 ```
-<exemplo_de_uso>
+npm install
+```
+* Rename env file
+
+```
+mv .env.default .env
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+<br>
 
-## 📫 Contribuindo para <nome_do_projeto>
+## ☕ Execution
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+To run the service, follow the steps:
+* Inside root folder `(same as package.json)`, run:
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+```npm
+npm run start:dev
+```
+OR
+```yarn
+yarn start:dev
+```
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
+<br>
 
-## 📝 Licença
+## Documentation
+Inside `<./doc>` folder exists an Insomnia file to test all routes.
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+<br>
+
+## 📫 Contributions
+
+To contribute with this project, follow these steps:
+
+1. Fork this repository.
+2. Clone the forked repository to your local machine.
+3. Make a new branch
+ ```
+ git checkout -b <branch_name>
+ ```
+4. Make your alterations e commit then:
+```
+git commit -m '<commit_message>'
+```
+5. Push your alterations to the forked repository:
+```
+git push --set-upstream origin <branch_name>
+```
+5. Make a pull request on the original repository.
+
+Alternatively, see the GitHub docs at [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+<br>
+
+## 📝 License
+
+This project is under MIT license.
