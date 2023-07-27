@@ -1,10 +1,10 @@
-# Notifications Microservice
+# Notification-service
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
 
 
-<img src="./public/banner.jpg"  alt="Exemplo imagem">
+<img src="./public/banner.jpg"  alt="Notifications service image">
 
 > This project was made to perform as an independent subsystem for others modules and it can be used to send notifications bounded to a recipient.
 
